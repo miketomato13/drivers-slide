@@ -10,6 +10,45 @@
   </head>
   <body>
     <div class="form">
+      <select id="year">
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+      </select>
       <select id="make">
         <option value=""></option>
         <option value="ACURA">ACURA</option>
@@ -33,7 +72,7 @@
         <option value="JAGUAR">JAGUAR</option>
         <option value="JEEP">JEEP</option>
         <option value="KIA">KIA</option>
-        <option value="LAMBORGHINI">LAMBORGHINI</option>
+        <option value="LAMBO">LAMBORGHINI</option>
         <option value="LAND ROVER">LAND ROVER</option>
         <option value="LEXUS">LEXUS</option>
         <option value="LINCOLN">LINCOLN</option>
@@ -53,6 +92,7 @@
         <option value="TOYOTA">TOYOTA</option>
         <option value="VOLKSWAGEN">VOLKSWAGEN</option>
         <option value="VOLVO">VOLVO</option>
+        <option value="OTHER">Other</option>
       </select>
       <select id="model">
         <option>Please choose from above</option>
@@ -92,8 +132,8 @@
                     Orlando, Silverado, Suburban, Tahoe, Traverse, Geo Prizm, Colorado, W4, W5, Trax, W7",
        "nissan":"GT-R, Versa, Versa Note, Altima, Leaf, 370Z, Sentra, Pathfinder, Rogue, Murano, Armada, Xterra, Quest, NV200,
                     Titan, Frontier",
-       "rolls-royce":"Phantom, Ghost, Wraith, Dawn",
-       "aston-martin":"Vantage, DB9, Rapide, DB11, Vanquish",
+       "rolls_royce":"Phantom, Ghost, Wraith, Dawn",
+       "aston_martin":"Vantage, DB9, Rapide, DB11, Vanquish",
        "lambo":"Aventador, Hurracan, Other",
        "isuzu":"NQR/NRR, NPR/ NPR-HD/ NPR-XD, FTR",
        "saab":"9-3, 9-5, SAAB-Scania",
@@ -101,6 +141,7 @@
        "pontiac":"Vibe, G3, G5, G6, G8 Solstice, Montana/ SV6, Torrent",
        "mitsubishi":"Eclipse, Raider, Outlander, Lancer, Galant, Endeavor, Montero, Mirage, Expo, 3000 GT, Diamante",
        "lotus":"Elise, Espirit, Eagle, Europa, Elan, Exige, 2-Eleven",
+       "other":"Vehicle Make Not Listed"
      }
 
 		var key = $(this).val();
@@ -188,6 +229,38 @@
       case 'NISSAN':
         vals = data.nissan.split(",");
         break;
+      case 'ROLLS-ROYCE':
+        vals = data.rolls_royce.split(",");
+        break;
+      case 'ASTON MARTIN':
+        vals = data.aston_martin.split(",");
+        break;
+      case 'LAMBO':
+        vals = data.lambo.split(",");
+        break;
+      case 'FERRARI':
+        vals = data.ferrari.split(",");
+        break;
+      case 'SAAB':
+        vals = data.saab.split(",");
+        break;
+      case 'SATURN':
+        vals = data.saturn.split(",");
+        break;
+      case 'ISUZU':
+        vals = data.isuzu.split(",");
+        break;
+      case 'PONTIAC':
+        vals = data.pontiac.split(",");
+        break;
+      case 'MISTUBISHI':
+        vals = data.mitsubishi.split(",");
+        break;
+      case 'LOTUS':
+        vals = data.lotus.split(",");
+        break;
+      case 'OTHER':
+        vals = data.other;
 			case 'base':
 				vals = ['Please choose from above'];
 		}
