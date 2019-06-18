@@ -61,16 +61,6 @@
       </select>
     </div>
     <script>
-    // $(function () {
-    //
-    //   const url = "https://" + "vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/" + make.value + "/modelyear/2015?format=json"
-    //
-    //
-    //   $.get({
-    //      url: url,
-    //      xhrFields: { withCredentials: true }
-    //   }).then(function (data) {
-
     $("#make").change(function() {
 
 
@@ -78,8 +68,6 @@
          "honda":"Accord, Civic, Pilot, CR-V",
          "dodge":"Ram, Durango, Charger, Callenger"
        }
-
-    	// $.getJSON("data.json", function(data) {
 
     		var key = $(this).val();
     		var vals = [];
@@ -102,47 +90,7 @@
     		});
 
     	});
-    // });
-
-  //   $(function() {
-  //       var data = [{
-  //         "Make_ID": 474,
-  //         "Make_Name": "Honda",
-  //         "Model_ID": 1861,
-  //         "Model_Name": "Accord"
-  //         },
-  //         {
-  //         "Make_ID": 474,
-  //         "Make_Name": "Honda",
-  //         "Model_ID": 1863,
-  //         "Model_Name": "Civic"
-  //         },
-  //         {
-  //         "Make_ID": 474,
-  //         "Make_Name": "Honda",
-  //         "Model_ID": 1864,
-  //         "Model_Name": "Pilot"
-  //         },
-  //         {
-  //         "Make_ID": 474,
-  //         "Make_Name": "Honda",
-  //         "Model_ID": 1865,
-  //         "Model_Name": "CR-V"
-  //         },
-  //       ];
-  //        const markup =
-  // `      <select data-placeholder="Model" class="chzn-select" style="width:115px;" tabindex="2" id="model">
-  //
-  //               ${data.map(data => `
-  //                              <option value="${data.Model_Name}">${data.Model_Name}</option>
-  //                                  `).join("")
-  //                 }
-  //         </select>
-  //       `;
-  //
-  //
-  //    $(".model-select").html(markup);
-  //  });
+    
     </script>
   </body>
 </html>
