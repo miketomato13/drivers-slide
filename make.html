@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous">
+    </script>
+  </head>
+  <body>
+    <div class="form">
+      <select id="make">
+        <option value=""></option>
+        <option value="ACURA">ACURA</option>
+        <option value="ASTON MARTIN">ASTON MARTIN</option>
+        <option value="AUDI">AUDI</option>
+        <option value="BENTLEY">BENTLEY</option>
+        <option value="BMW">BMW</option>
+        <option value="BUICK">BUICK</option>
+        <option value="CADILLAC">CADILLAC</option>
+        <option value="CHEVROLET">CHEVROLET</option>
+        <option value="CHRYSLER">CHRYSLER</option>
+        <option value="DODGE">DODGE</option>
+        <option value="FERRARI">FERRARI</option>
+        <option value="FORD">FORD</option>
+        <option value="GMC">GMC</option>
+        <option value="HONDA">HONDA</option>
+        <option value="HUMMER">HUMMER</option>
+        <option value="HYUNDAI">HYUNDAI</option>
+        <option value="INFINITI">INFINITI</option>
+        <option value="ISUZU">ISUZU</option>
+        <option value="JAGUAR">JAGUAR</option>
+        <option value="JEEP">JEEP</option>
+        <option value="KIA">KIA</option>
+        <option value="LAMBORGHINI">LAMBORGHINI</option>
+        <option value="LAND ROVER">LAND ROVER</option>
+        <option value="LEXUS">LEXUS</option>
+        <option value="LINCOLN">LINCOLN</option>
+        <option value="LOTUS">LOTUS</option>
+        <option value="MASERATI">MASERATI</option>
+        <option value="MAZDA">MAZDA</option>
+        <option value="MERCEDES-BENZ">MERCEDES-BENZ</option>
+        <option value="MERCURY">MERCURY</option>
+        <option value="MITSUBISHI">MITSUBISHI</option>
+        <option value="NISSAN">NISSAN</option>
+        <option value="PONTIAC">PONTIAC</option>
+        <option value="PORSCHE">PORSCHE</option>
+        <option value="ROLLS-ROYCE">ROLLS-ROYCE</option>
+        <option value="SAAB">SAAB</option>
+        <option value="SATURN">SATURN</option>
+        <option value="SUBARU">SUBARU</option>
+        <option value="SUZUKI">SUZUKI</option>
+        <option value="TOYOTA">TOYOTA</option>
+        <option value="VOLKSWAGEN">VOLKSWAGEN</option>
+        <option value="VOLVO">VOLVO</option>
+      </select>
+      <select id="model">
+        <option>Please choose from above</option>
+      </select>
+    </div>
+    <script>
+    // $(function () {
+    //
+    //   const url = "https://" + "vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/" + make.value + "/modelyear/2015?format=json"
+    //
+    //
+    //   $.get({
+    //      url: url,
+    //      xhrFields: { withCredentials: true }
+    //   }).then(function (data) {
+
+    $("#make").change(function() {
+
+
+       var data = {
+         "honda":"Accord, Civic, Pilot, CR-V",
+         "dodge":"Ram, Durango, Charger, Callenger"
+       }
+
+    	// $.getJSON("data.json", function(data) {
+
+    		var key = $(this).val();
+    		var vals = [];
+
+    		switch(key) {
+    			case 'HONDA':
+    				vals = data.honda.split(",");
+    				break;
+    			case 'DODGE':
+    				vals = data.dodge.split(",");
+    				break;
+    			case 'base':
+    				vals = ['Please choose from above'];
+    		}
+
+    		var $secondChoice = $("#model");
+    		$secondChoice.empty();
+    		$.each(vals, function(index, value) {
+    			$secondChoice.append("<option>" + value + "</option>");
+    		});
+
+    	});
+    // });
+
+  //   $(function() {
+  //       var data = [{
+  //         "Make_ID": 474,
+  //         "Make_Name": "Honda",
+  //         "Model_ID": 1861,
+  //         "Model_Name": "Accord"
+  //         },
+  //         {
+  //         "Make_ID": 474,
+  //         "Make_Name": "Honda",
+  //         "Model_ID": 1863,
+  //         "Model_Name": "Civic"
+  //         },
+  //         {
+  //         "Make_ID": 474,
+  //         "Make_Name": "Honda",
+  //         "Model_ID": 1864,
+  //         "Model_Name": "Pilot"
+  //         },
+  //         {
+  //         "Make_ID": 474,
+  //         "Make_Name": "Honda",
+  //         "Model_ID": 1865,
+  //         "Model_Name": "CR-V"
+  //         },
+  //       ];
+  //        const markup =
+  // `      <select data-placeholder="Model" class="chzn-select" style="width:115px;" tabindex="2" id="model">
+  //
+  //               ${data.map(data => `
+  //                              <option value="${data.Model_Name}">${data.Model_Name}</option>
+  //                                  `).join("")
+  //                 }
+  //         </select>
+  //       `;
+  //
+  //
+  //    $(".model-select").html(markup);
+  //  });
+    </script>
+  </body>
+</html>
