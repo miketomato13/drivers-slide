@@ -65,8 +65,37 @@
 
 
        var data = {
-         "honda":"Accord, Civic, Pilot, CR-V",
-         "dodge":"Ram, Durango, Charger, Callenger"
+         "honda":"Accord, Civic, Pilot, CR-V, Ridgeline, Odyssey, Fit, CR-Z",
+         "dodge":"Ram, Durango, Charger, Callenger, Avenger, Caliber, Viper, Journey, Nitro, Dakota, Sprinter, Stratus, Caravan",
+         "subaru":"Legacy, Outback, Forester, Impreza, XV CrossTrek, WRX, BRZ",
+         "tesla":"Model 3, Model X, Model S",
+         "jaguar":"XJ, XF, XK, F-Type, XE, F-Pace, E-Pace",
+         "maserati":"Quattroporte, Granturismo, Ghibli, Levante",
+         "land_rover":"Discovery Sport, Range Rover Evoque, LR4, Range Rover Sport, Range Rover, Discovery, Range Rover Velar",
+         "toyota":"SCION tC, Corolla, Prius, SCION xB, Land Cruiser, Highlander, 4-Runner, Rav4, Tacoma, Scion FR-S, Yaris",
+         "mercedes-benz":"SL-Class, E-Class, C-Class, S-Class, CLA-Class, CLS-Class, Sprinter, GLA-Class, SLS-Class, M-Class, G-Class, GLK-Class, AMG GT, GLC, GLE, SLC-Class, GLS-Class",
+         "bmw":"328i, M3, 335i, X6, 528i, 535i, X5, 550i, X3, 740i, 750i, M6, M3, 640i, 650i",
+         "ford":"Crown Victoria, Focus, Fusion, Mustang, Taurus, Edge, Escape, Expedition, Explorer, F-150, F-250, F-350, F-450, F-550, F650, Fiesta, GT",
+         "lincoln":"MKZ, MKS, MKT, MKX, Navigator, MKC, Continental, Navigator L",
+         "lexus":"RX, GS, GX, LC, IS, LS, LX, UX, ES, NX, RC, LFA",
+         "kia":"Rio, Soul, Forte, Rondo, Optima, Sedona, Sorento, Sportage, Cadenza",
+         "hyundai":"Equus, Santa Fe, Tucson, Veloster, Genesis, Sonata, Elantra, Azera, Accent",
+         "fiat":"500L, 500, Freemont, 124 Spider",
+         "volvo":"S60, S80, V60, XC60, XC70, 9700, B10M",
+         "jeep":"Wrangler, Liberty, Cherokee, Compass, Patriot, Commander, Grand Cherokee, Renegade",
+         "volkswagen":"Routan, Golf, Passat, Touareg, Jetta, GTI, Eos, Golf Sportswagen, e-Golf, Beetle, CC, Tiguan",
+         "infiniti":"QX50, Q40, Q50, Q60, Q70, QX70, QX80, QX60, Q70L",
+         "chrysler":"Sebring, 300, Town and Country, 200, PT Cruiser, Pacifica, Aspen",
+         "acura":"RDX, MDX, RLX, ILX, TLX",
+         "mazda":"Tribute, MX-5, RX-8, Mazda3, Mazda5, CX-9, Mazda6, Mazda2, CX-5, B-Series",
+         "gmc":"Acadia, Savana, Sierra, Terrain, Yukon, Canyon, Yukon XL",
+         "cadillac":"ATS, CTS, ELR, XTS, Escalade, SRX",
+         "buick":"Lacrosse, Regal, Verano, Enclave, Encore",
+         "chevrolet":"Aveo, Camaro, Caprice, Corvette, Cruze, Impala, Malibu, Sonic, Spark, SS, Volt, Captiva, Equinox, Express,
+                      Orlando, Silverado, Suburban, Tahoe, Traverse, Geo Prizm, Colorado, W4, W5, Trax, W7"
+         "nissan":"GT-R, Versa, Versa Note, Altima, Leaf, 370Z, Sentra, Pathfinder, Rogue, Murano, Armada, Xterra, Quest, NV200,
+                      Titan, Frontier",
+
        }
 
     		var key = $(this).val();
@@ -79,6 +108,36 @@
     			case 'DODGE':
     				vals = data.dodge.split(",");
     				break;
+          case 'SUBARU':
+    				vals = data.subaru.split(",");
+    				break;
+          case 'TESLA':
+            vals = data.tesla.split(",");
+            break;
+          case 'JAGUAR':
+            vals = data.jaguar.split(",");
+            break;
+          case 'MASERATI':
+            vals = data.maserati.split(",");
+            break;
+          case 'LAND ROVER':
+            vals = data.land_rover.split(",");
+            break;
+          case 'TOYOTA':
+            vals = data.toyota.split(",");
+            break;
+          case 'MERCEDES-BENZ':
+            vals = data.mercedes-benz.split(",");
+            break;
+          case 'BMW':
+            vals = data.bmw.split(",");
+            break;
+          case 'FORD':
+            vals = data.ford.split(",");
+            break;
+          case 'LINCOLN':
+            vals = data.lincoln.split(",");
+            break;
     			case 'base':
     				vals = ['Please choose from above'];
     		}
@@ -90,7 +149,7 @@
     		});
 
     	});
-    
+
     </script>
   </body>
 </html>
