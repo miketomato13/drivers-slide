@@ -54,7 +54,7 @@
     <select id="make">
       <option value="" disabled selected>Please choose your make</option>
       <option value="ACURA">ACURA</option>
-      <option value="ASTON MARTIN">ASTON MARTIN</option>
+      <option value="ASTONMARTIN">ASTON MARTIN</option>
       <option value="AUDI">AUDI</option>
       <option value="BENTLEY">BENTLEY</option>
       <option value="BMW">BMW</option>
@@ -75,19 +75,19 @@
       <option value="JEEP">JEEP</option>
       <option value="KIA">KIA</option>
       <option value="LAMBO">LAMBORGHINI</option>
-      <option value="LAND ROVER">LAND ROVER</option>
+      <option value="LANDROVER">LAND ROVER</option>
       <option value="LEXUS">LEXUS</option>
       <option value="LINCOLN">LINCOLN</option>
       <option value="LOTUS">LOTUS</option>
       <option value="MASERATI">MASERATI</option>
       <option value="MAZDA">MAZDA</option>
-      <option value="MERCEDES-BENZ">MERCEDES-BENZ</option>
+      <option value="MERCEDESBENZ">MERCEDES-BENZ</option>
       <option value="MERCURY">MERCURY</option>
       <option value="MITSUBISHI">MITSUBISHI</option>
       <option value="NISSAN">NISSAN</option>
       <option value="PONTIAC">PONTIAC</option>
       <option value="PORSCHE">PORSCHE</option>
-      <option value="ROLLS-ROYCE">ROLLS-ROYCE</option>
+      <option value="ROLLSROYCE">ROLLS-ROYCE</option>
       <option value="SAAB">SAAB</option>
       <option value="SATURN">SATURN</option>
       <option value="SUBARU">SUBARU</option>
@@ -105,15 +105,16 @@
     $("#make").change(function () {
 
       var data = {
-        "honda": "Accord, Civic, Pilot, CR-V, Ridgeline, Odyssey, Fit, CR-Z",
-        "dodge": "Ram, Durango, Charger, Challenger, Avenger, Caliber, Viper, Journey, Nitro, Dakota, Sprinter, Stratus, Caravan",
+
+        "honda": "Accord, Civic, Pilot, CR-V, Ridgeline, Odyssey, Fit, CR-Z, Element",
+        "dodge": "Ram, Durango, Charger, Callenger, Avenger, Caliber, Viper, Journey, Nitro, Dakota, Sprinter, Stratus, Caravan",
         "subaru": "Legacy, Outback, Forester, Impreza, XV CrossTrek, WRX, BRZ",
         "tesla": "Model 3, Model X, Model S",
         "jaguar": "XJ, XF, XK, F-Type, XE, F-Pace, E-Pace",
         "maserati": "Quattroporte, Granturismo, Ghibli, Levante",
-        "land_rover": "Discovery Sport, Range Rover Evoque, LR4, Range Rover Sport, Range Rover, Discovery, Range Rover Velar",
+        "landrover": "Discovery Sport, Range Rover Evoque, LR4, Range Rover Sport, Range Rover, Discovery, Range Rover Velar",
         "toyota": "SCION tC, Corolla, Prius, SCION xB, Land Cruiser, Highlander, 4-Runner, Rav4, Tacoma, Scion FR-S, Yaris",
-        "mercedes_benz": "SL-Class, E-Class, C-Class, S-Class, CLA-Class, CLS-Class, Sprinter, GLA-Class, SLS-Class, M-Class, G-Class, GLK-Class, AMG GT, GLC, GLE, SLC-Class, GLS-Class",
+        "mercedesbenz": "SL-Class, E-Class, C-Class, S-Class, CLA-Class, CLS-Class, Sprinter, GLA-Class, SLS-Class, M-Class, G-Class, GLK-Class, AMG GT, GLC, GLE, SLC-Class, GLS-Class",
         "bmw": "328i, M3, 335i, X6, 528i, 535i, X5, 550i, X3, 740i, 750i, M6, M3, 640i, 650i",
         "ford": "Crown Victoria, Focus, Fusion, Mustang, Taurus, Edge, Escape, Expedition, Explorer, F-150, F-250, F-350, F-450, F-550, F650, Fiesta, GT",
         "lincoln": "MKZ, MKS, MKT, MKX, Navigator, MKC, Continental, Navigator L",
@@ -133,8 +134,8 @@
         "buick": "Lacrosse, Regal, Verano, Enclave, Encore",
         "chevrolet": "Aveo, Camaro, Caprice, Corvette, Cruze, Impala, Malibu, Sonic, Spark, SS, Volt, Captiva, Equinox, Express, Orlando, Silverado, Suburban, Tahoe, Traverse, Geo Prizm, Colorado, W4, W5, Trax, W7",
         "nissan": "GT-R, Versa, Versa Note, Altima, Leaf, 370Z, Sentra, Pathfinder, Rogue, Murano, Armada, Xterra, Quest, NV200, Titan, Frontier",
-        "rolls_royce": "Phantom, Ghost, Wraith, Dawn",
-        "aston_martin": "Vantage, DB9, Rapide, DB11, Vanquish",
+        "rollsroyce": "Phantom, Ghost, Wraith, Dawn",
+        "astonmartin": "Vantage, DB9, Rapide, DB11, Vanquish",
         "lambo": "Aventador, Hurracan, Other",
         "isuzu": "NQR/NRR, NPR/ NPR-HD/ NPR-XD, FTR",
         "saab": "9-3, 9-5, SAAB-Scania",
@@ -149,146 +150,13 @@
         "mercury": "Grand Marquis, Milan",
         "porsche": "911, Boxster, Cayenne, Cayman, Panamera, 918, Macan",
         "other": "Vehicle Make Not Listed",
-      }
+      };
 
       var key = $(this).val();
       var vals = [];
 
-      switch (key) {
-        case 'HONDA':
-          vals = data.honda.split(",");
-          break;
-        case 'DODGE':
-          vals = data.dodge.split(",");
-          break;
-        case 'SUBARU':
-          vals = data.subaru.split(",");
-          break;
-        case 'TESLA':
-          vals = data.tesla.split(",");
-          break;
-        case 'JAGUAR':
-          vals = data.jaguar.split(",");
-          break;
-        case 'MASERATI':
-          vals = data.maserati.split(",");
-          break;
-        case 'LAND ROVER':
-          vals = data.land_rover.split(",");
-          break;
-        case 'TOYOTA':
-          vals = data.toyota.split(",");
-          break;
-        case 'MERCEDES-BENZ':
-          vals = data.mercedes_benz.split(",");
-          break;
-        case 'BMW':
-          vals = data.bmw.split(",");
-          break;
-        case 'FORD':
-          vals = data.ford.split(",");
-          break;
-        case 'LINCOLN':
-          vals = data.lincoln.split(",");
-          break;
-        case 'KIA':
-          vals = data.kia.split(",");
-          break;
-        case 'HYUNDAI':
-          vals = data.hyundai.split(",");
-          break;
-        case 'FIAT':
-          vals = data.fiat.split(",");
-          break;
-        case 'VOLVO':
-          vals = data.volvo.split(",");
-          break;
-        case 'JEEP':
-          vals = data.jeep.split(",");
-          break;
-        case 'VOLKSWAGEN':
-          vals = data.volkswagen.split(",");
-          break;
-        case 'INFINITI':
-          vals = data.infiniti.split(",");
-          break;
-        case 'CHRYSLER':
-          vals = data.chrysler.split(",");
-          break;
-        case 'MAZDA':
-          vals = data.mazda.split(",");
-          break;
-        case 'ACURA':
-          vals = data.acura.split(",");
-          break;
-        case 'GMC':
-          vals = data.gmc.split(",");
-          break;
-        case 'CADILLAC':
-          vals = data.cadillac.split(",");
-          break;
-        case 'BUICK':
-          vals = data.buick.split(",");
-          break;
-        case 'CHEVROLET':
-          vals = data.chevrolet.split(",");
-          break;
-        case 'NISSAN':
-          vals = data.nissan.split(",");
-          break;
-        case 'ROLLS-ROYCE':
-          vals = data.rolls_royce.split(",");
-          break;
-        case 'ASTON MARTIN':
-          vals = data.aston_martin.split(",");
-          break;
-        case 'LAMBO':
-          vals = data.lambo.split(",");
-          break;
-        case 'FERRARI':
-          vals = data.ferrari.split(",");
-          break;
-        case 'SAAB':
-          vals = data.saab.split(",");
-          break;
-        case 'SATURN':
-          vals = data.saturn.split(",");
-          break;
-        case 'ISUZU':
-          vals = data.isuzu.split(",");
-          break;
-        case 'PONTIAC':
-          vals = data.pontiac.split(",");
-          break;
-        case 'MITSUBISHI':
-          vals = data.mitsubishi.split(",");
-          break;
-        case 'LOTUS':
-          vals = data.lotus.split(",");
-          break;
-        case 'AUDI':
-          vals = data.audi.split(",");
-          break;
-        case 'BENTLEY':
-          vals = data.bentley.split(",");
-          break;
-        case 'HUMMER':
-          vals = data.hummer.split(",");
-          break;
-        case 'LEXUS':
-          vals = data.lexus.split(",");
-          break;
-        case 'MERCURY':
-          vals = data.mercury.split(",");
-          break;
-        case 'PORSCHE':
-          vals = data.porsche.split(",");
-          break;
-        case 'OTHER':
-          vals = data.other.split(",");
-          break;
-        case 'base':
-          vals = ['Please choose from above'];
+      if (key) {
+        vals =  data[key.toLowerCase()].split(",");
       }
 
       var $secondChoice = $("#model");
