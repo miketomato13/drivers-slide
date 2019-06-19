@@ -12,6 +12,7 @@
 <body>
   <div class="form">
     <select id="year">
+      <option value="">Year of Vehicle</option>
       <option value="1984">1984</option>
       <option value="1985">1985</option>
       <option value="1986">1986</option>
@@ -51,7 +52,7 @@
       <option value="2020">2020</option>
     </select>
     <select id="make">
-      <option value=""></option>
+      <option value="">Please choose your make</option>
       <option value="ACURA">ACURA</option>
       <option value="ASTON MARTIN">ASTON MARTIN</option>
       <option value="AUDI">AUDI</option>
@@ -96,8 +97,9 @@
       <option value="OTHER">OTHER</option>
     </select>
     <select id="model">
-      <option>Please choose from above</option>
+      <option>Please choose your model</option>
     </select>
+    <button type="submit">Submit</button>
   </div>
   <script>
     $("#make").change(function () {
@@ -129,11 +131,9 @@
         "gmc": "Acadia, Savana, Sierra, Terrain, Yukon, Canyon, Yukon XL",
         "cadillac": "ATS, CTS, ELR, XTS, Escalade, SRX",
         "buick": "Lacrosse, Regal, Verano, Enclave, Encore",
-        "chevrolet": "Aveo, Camaro, Caprice, Corvette, Cruze, Impala, Malibu, Sonic, Spark, SS, Volt, Captiva, Equinox, Express,
-                    Orlando, Silverado, Suburban, Tahoe, Traverse, Geo Prizm, Colorado, W4, W5, Trax, W7",
-       "nissan": "GT-R, Versa, Versa Note, Altima, Leaf, 370Z, Sentra, Pathfinder, Rogue, Murano, Armada, Xterra, Quest, NV200,
-                    Titan, Frontier",
-       "rolls_royce": "Phantom, Ghost, Wraith, Dawn",
+        "chevrolet": "Aveo, Camaro, Caprice, Corvette, Cruze, Impala, Malibu, Sonic, Spark, SS, Volt, Captiva, Equinox, Express, Orlando, Silverado, Suburban, Tahoe, Traverse, Geo Prizm, Colorado, W4, W5, Trax, W7",
+        "nissan": "GT-R, Versa, Versa Note, Altima, Leaf, 370Z, Sentra, Pathfinder, Rogue, Murano, Armada, Xterra, Quest, NV200, Titan, Frontier",
+        "rolls_royce": "Phantom, Ghost, Wraith, Dawn",
         "aston_martin": "Vantage, DB9, Rapide, DB11, Vanquish",
         "lambo": "Aventador, Hurracan, Other",
         "isuzu": "NQR/NRR, NPR/ NPR-HD/ NPR-XD, FTR",
@@ -142,7 +142,13 @@
         "pontiac": "Vibe, G3, G5, G6, G8 Solstice, Montana/ SV6, Torrent",
         "mitsubishi": "Eclipse, Raider, Outlander, Lancer, Galant, Endeavor, Montero, Mirage, Expo, 3000 GT, Diamante",
         "lotus": "Elise, Espirit, Eagle, Europa, Elan, Exige, 2-Eleven",
-        "other": "Vehicle Make Not Listed"
+        "audi": "TT, A4, A6, A8, A3, A5, S6, S8, R8, TTS, Q5, RS5, A7, Q3, SQ5, S3, RS7",
+        "bentley": "Continental, Mulsanne",
+        "ferrari":"F12 Berlinetta, California T, FF, La Ferrari, 458 Italia, 458 Speciale, 458 Speciale Spider, 458 Spider",
+        "hummer":"H1, H2, H3",
+        "mercury":"Grand Marquis, Milan",
+        "porsche": "911, Boxster, Cayenne, Cayman, Panamera, 918, Macan",
+        "other": "Vehicle Make Not Listed",
       }
 
       var key = $(this).val();
@@ -219,7 +225,7 @@
           vals = data.gmc.split(",");
           break;
         case 'CADILLAC':
-          vals = data.chrysler.split(",");
+          vals = data.cadillac.split(",");
           break;
         case 'BUICK':
           vals = data.buick.split(",");
@@ -236,8 +242,8 @@
         case 'ASTON MARTIN':
           vals = data.aston_martin.split(",");
           break;
-        case 'LAMBORGHINI':
-          vals = data.lamborghini.split(",");
+        case 'LAMBO':
+          vals = data.lambo.split(",");
           break;
         case 'FERRARI':
           vals = data.ferrari.split(",");
@@ -254,14 +260,33 @@
         case 'PONTIAC':
           vals = data.pontiac.split(",");
           break;
-        case 'MISTUBISHI':
+        case 'MITSUBISHI':
           vals = data.mitsubishi.split(",");
           break;
         case 'LOTUS':
           vals = data.lotus.split(",");
           break;
+        case 'AUDI':
+          vals = data.audi.split(",");
+          break;
+        case 'BENTLEY':
+          vals = data.bentley.split(",");
+          break;
+        case 'HUMMER':
+          vals = data.hummer.split(",");
+          break;
+        case 'LEXUS':
+          vals = data.lexus.split(",");
+          break;
+        case 'MERCURY':
+          vals = data.mercury.split(",");
+          break;
+        case 'PORSCHE':
+          vals = data.porsche.split(",");
+          break;
         case 'OTHER':
-          vals = data.other;
+          vals = data.other.split(",");
+          break;
         case 'base':
           vals = ['Please choose from above'];
       }
